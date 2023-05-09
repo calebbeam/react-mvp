@@ -27,8 +27,7 @@ function App() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-  }, [lifterData]);
+  useEffect(() => {}, [lifterData]);
 
   function handleCheckboxClickGender(event) {
     const checkboxName = event.target.name;
@@ -61,29 +60,38 @@ function App() {
       squat,
       bench,
       deadlift,
-      isEquipped: event=='equipped',
+      isEquipped: event == "equipped",
     };
     const options = {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(resultState)
-    }
-    const postData= await fetch(`http://localhost:5000/api/powerlifters `,options)
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(resultState),
+    };
+    const postData = await fetch(
+      `http://localhost:5000/api/powerlifters `,
+      options
+    );
     const response = await postData.json();
-    setlifterData([...lifterData, response])
-   }
-
-  const deletePost = async (value)=>{
-    const options = {
-      method: 'DELETE',
-    }
-    let id = value.id
-    const deleteData= await fetch(`http://localhost:5000/api/powerlifters/${id}`, options )
-    let newContainer = lifterData.filter(element=>element.id != id);
-    setlifterData(newContainer);
+    setlifterData([response, ...lifterData]);
   }
+
+  const deletePost = async (value) => {
+    const options = {
+      method: "DELETE",
+    };
+    let id = value.id;
+    const deleteData = await fetch(
+      `http://localhost:5000/api/powerlifters/${id}`,
+      options
+    );
+    let newContainer = lifterData.filter((element) => element.id != id);
+    setlifterData(newContainer);
+  };
   return (
     <>
+      <div className="pageTitle">
+        <h1>Powerlifting Scores Calculator</h1>
+      </div>
       <div className="container">
         <div className="inputs">
           <h2>Calculate Scores</h2>
@@ -176,7 +184,9 @@ function App() {
           </button>
         </div>
 
-        {lifterData.length==0? null :<Result lifterData={lifterData} deletePost= {deletePost}/>}
+        {lifterData.length == 0 ? null : (
+          <Result lifterData={lifterData} deletePost={deletePost} />
+        )}
       </div>
     </>
   );

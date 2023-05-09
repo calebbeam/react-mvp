@@ -1,4 +1,5 @@
 body {
+  overflow: hidden;
   background-image: url('http://visionaryathletes.com/wp-content/uploads/2013/12/wsbb21.jpg');
   background-size: cover;
 }
@@ -24,21 +25,20 @@ i {
   align-items: center;
   justify-content: center;
   font-family: Arial, sans-serif;
-  height: 100vh;
-  max-width: 1000px;
+  height: calc(100vh - 40px); /* Adjust height to leave less space */
+  margin-top: 10px; /* Adjust the margin-top to reduce the space */
 }
 
 .inputs {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
   border: 1px solid #ccc;
-  padding: 20px;
+  padding: 50px;
   border-radius: 5px;
   background-color: #f0f0f0;
   width: 200px;
-  height: 60vh;
+  height: 50vh;
 }
 
 .gender,
@@ -46,14 +46,12 @@ i {
 .event {
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 .genderSelect,
 .eventSelect {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   gap: 10px;
 }
@@ -63,21 +61,33 @@ input[type="checkbox"] {
 }
 
 .resultContainer {
-  /* margin-top: 10px; */
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 20px;
+  overflow-y: scroll;
+  max-height: calc(100vh - 220px);
+  margin-bottom: 40px;
+  max-width: 700px;
+  border-radius: 10px;
+  background-color: #aaa9a9;
 }
 
 .results {
-  /* margin-top: 10px; */
-  border: 1px solid #ccc;
-  padding: 10px;
+  border: 1px solid #000000;
+  padding: 20px;
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 60vh;
   background-color: #f0f0f0;
   border-radius: 5px;
+  height: 380px;
+  /* height: fit-content; */
+  max-width: 150px;
+}
+
+.resultContainer::-webkit-scrollbar {
+  width: 0; /* Hide scrollbar */
 }
 
 .submitButton {
@@ -99,4 +109,20 @@ h2 {
 
 p {
   margin: 5px 0;
+}
+
+.pageTitle {
+  display: flex;
+  justify-content: center;
+}
+
+.pageTitle h1 {
+  font-size: 40px; /* Adjust the font size as needed */
+  color: rgb(253, 251, 251); /* Set the font color to white */
+  background-color: #8a8989;
+  max-width: fit-content;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 5px;
+  border: 2px solid #000000;
 }

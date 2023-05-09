@@ -1,0 +1,102 @@
+body {
+  background-image: url('http://visionaryathletes.com/wp-content/uploads/2013/12/wsbb21.jpg');
+  background-size: cover;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+i {
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  max-width: 1000px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  width: 200px;
+  height: 60vh;
+}
+
+.gender,
+.weight,
+.event {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.genderSelect,
+.eventSelect {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+input[type="checkbox"] {
+  margin-left: 10px;
+}
+
+.resultContainer {
+  /* margin-top: 10px; */
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.results {
+  /* margin-top: 10px; */
+  border: 1px solid #ccc;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.submitButton {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: #0056b3;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+p {
+  margin: 5px 0;
+}

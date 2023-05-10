@@ -18,3 +18,4 @@ This is a powerlifting score calculator to give a user their IPF and DOTS score 
 **Database:** Postgres
 
 
+![powe](https://github.com/calebbeam/react-mvp/assets/119142209/74089ace-1b64-40e9-9b0c-0df9c46b7d4a)
